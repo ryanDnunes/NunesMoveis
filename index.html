@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nunes MontaFacil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img class="imagem_logo" src="imagens/logo.png" alt="imagem_logo">
+            <h1 class="nomee">Nunes MontaFacil</h1>
+        </div>
+        <nav>
+            <button id="menu_botao" class="menu_botao">☰</button>
+            <ul id="menu" class="menu">
+                <li><a class="mudarcor" onmouseover="vai(this)" onmouseout="volta(this)" href="#home">Home</a></li>
+                <li><a class="mudarcor" onmouseover="vai(this)" onmouseout="volta(this)" href="#servicos">Serviços</a></li>
+                <li><a class="mudarcor" onmouseover="vai(this)" onmouseout="volta(this)" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content" id="home">
+            <div class="imagem-container">
+                <img class="imagem_apresentacao" src="imagens/gif1.gif" alt="imagem_apresentacao">
+                <p class="titulo">Bem-vindo ao nosso site!<br>Nunes MontaFacil é uma empresa especializada em montagem de moveis e instalação de leds</p>
+            </div>
+        </section>
+        
+        <section class="content" id="servicos">
+            <h1>Serviços: </h1>
+            <div class="conjunto_de_imagens">
+
+                <video src="imagens/1.mp4" alt="Imagem 1" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/2.mp4" alt="Imagem 2" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/3.mp4" alt="Imagem 3" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/4.mp4" alt="Imagem 4" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/5.mp4" alt="Imagem 5" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/6.mp4" alt="Imagem 6" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <video src="imagens/7.mp4" alt="Imagem 7" controls style="width: 50%; margin-bottom: 10px;"></video>
+                <img src="imagens/8.jpg" alt="Imagem 8">
+                
+                
+  
+
+                <!-- Adicione quantas imagens quiser aqui -->
+            </div>
+            <div class="botoes">
+                <button id="verMais">Ver Mais</button>
+                <button id="voltar" style="display: none;">Voltar</button>
+            </div>
+        </section>
+
+        <section class="content" id="contato">
+            <h1>Entre em contato com a Nunes MontaFacil</h1>
+            <form id="contactForm">
+                <div class="formulario">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="opcional" required>
+                </div>
+                <div class="formulario">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Obrigatório" required>
+                </div>
+                <div class="formulario">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone"  placeholder="(xx) xxxx-xxxx" required>
+                </div>
+                <div class="formulario">
+                    <label for="subject">Assunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="formulario">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div class="formulario">
+                    <button type="button" id="submitBtn">Enviar</button>
+                </div>
+            </form>
+        </section>
+    
+        <script>
+            document.getElementById('submitBtn').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                
+                // Captura os dados do formulário
+                var name = encodeURIComponent(document.getElementById('name').value);
+                var email = encodeURIComponent(document.getElementById('email').value);
+                var phone = encodeURIComponent(document.getElementById('phone').value);
+                var subject = encodeURIComponent(document.getElementById('subject').value);
+                var message = encodeURIComponent(document.getElementById('message').value);
+                
+                // Formata a mensagem para o WhatsApp
+                var whatsappMessage = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0AAssunto: ${subject}%0AMensagem: ${message}`;
+                
+                // Cria o link do WhatsApp
+                var whatsappLink = `https://wa.me/555191772148?text=${whatsappMessage}`;
+                
+                // Redireciona para o link do WhatsApp
+                window.location.href = whatsappLink;
+            });
+        </script>
+
+
+
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/mdprestacoesdeservicos/" class="link-estilizado">&copy; Site feito por MD prestações de serviços</a>    
+   </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+                
+
+    
